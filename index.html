@@ -1,21 +1,26 @@
 <!DOCtypehtml> 
 <html>
 <head> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Arav Desai</title> 
 	<style>
-	@media(max-width:1440px;){
-	p,h1,h2{
-		font-family:'comic sans',cursive;
+	@media(max-width:1440px){
+	*{
+		font-family:'comic sans',cursive;	
+	}
+	h1,h2{
+		font-size:clamp(1.8rem,calc(7vw+1rem),5rem);
 	}
 	body{
 		background-color:var(--primary-color);
 		color:var(--secondary-color);
 		border-radius:10px;
 		border:2px solid var(--secondary-color);		 
-		margin:5px;
+		margin:0;
 		padding:10px;
 		text-decoration:none;
-		font-family:'comic sans',cursive;
+		min-height:100dvh;
+		display:flex;
 	}	
 	a{
 		background-color:var(--primary-color);
@@ -25,7 +30,6 @@
 		margin:5px;
 		padding:10px;
 		text-decoration:none;
-		font-family:'comic sans',cursive;
 	}
 	a:hover{
 		background-color:var(--secondary-color);
@@ -75,7 +79,7 @@
   			'opsz' 24
 	}
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
-	.serach{
+	.search{
 		width:max-content;
 		display:flex;
 		align-items:center;
@@ -85,7 +89,213 @@
 	}
 	.search-input{
 		font-size:16px;
+		color:var(--secondary-color);
+		margin-left:14px;
+		outline:none;
+		border:2px solid var(--secondary-color);
+		background:transparent;
+		flex:1;
+	}
+	.search-input::placeholder{ color:var(--secondary-color);}
+	.logo-link {
+ 		 background: none;
+  	 	 border: none;
+  	 	 padding: 0;
+	}
+	.logo-link img {
+  		width: 60px; 
+  		height: auto;
+	}
+	}
+	@media(max-width:601px) and (max-width:1024px){
+		nav {
+			  display: flex;
+  			  flex-wrap: wrap;
+  			  justify-content: space-between;
+			}
+		*{
 		font-family:'comic sans',cursive;
+		}
+	h1,h2{
+		font-size:clamp(1.8rem,calc(7vw+1rem),5rem);
+	}
+	body{
+		background-color:var(--primary-color);
+		color:var(--secondary-color);
+		border-radius:10px;
+		border:2px solid var(--secondary-color);		 
+		margin:0;
+		padding:10px;
+		text-decoration:none;
+		min-height:100dvh;
+		display:flex;
+	}	
+	a{
+		background-color:var(--primary-color);
+		color:var(--secondary-color);
+		border-radius:10px;
+		border:2px solid var(--secondary-color);		 
+		margin:5px;
+		padding:10px;
+		text-decoration:none;
+	}
+	a:hover{
+		background-color:var(--secondary-color);
+			color:var(--primary-color);
+		}
+	nav:hover{
+			background-color:var(--secondary-color);
+			color:var(--primary-color);
+		}
+	 div.cl{
+		background-color: gray;
+		color:var(--primary-color);	
+		}
+		.image {
+            float: none;
+		    display: block;
+    		margin: 0 auto;
+        }	
+      .dark-mode {
+            --primary-color:black;
+			--secondary-color:white;
+        }
+		#icon{
+			width:30px;
+			cursor:pointer;
+		}
+		:root{
+			--primary-color:white;
+			--secondary-color:black;
+		}
+	::-webkit-scrollbar{width:15px;}
+	::-webkit-scrollbar-track{background:orange;}
+	::-webkit-scollbar-thumb{
+		background:linear-gradiant(white,red);
+		border-raduis:10px;
+	}
+	.material-symbols-outlined {
+  		font-variation-settings:
+  			'FILL' 0,
+  			'wght' 400,
+  			'GRAD' 0,
+  			'opsz' 24
+	}
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+	.search{
+		width:max-content;
+		display:flex;
+		align-items:center;
+		padding:14px;
+		border-radius:28px;
+		background:var(--primary-color);
+	}
+	.search-input{
+		font-size:16px;
+		color:var(--secondary-color);
+		margin-left:14px;
+		outline:none;
+		border:2px solid var(--secondary-color);
+		background:transparent;
+		flex:1;
+	}
+	.search-input::placeholder{ color:var(--secondary-color);}
+	.logo-link {
+ 		 background: none;
+  	 	 border: none;
+  	 	 padding: 0;
+	}
+	.logo-link img {
+  		width: 60px; 
+  		height: auto;
+	}
+	}
+	@media(max-width:600px){
+		*{
+		font-family:'comic sans',cursive;
+		}
+		h1,h2{
+			font-size:clamp(1.8rem,calc(7vw+1rem),5rem);
+		}
+	body{
+		background-color:var(--primary-color);
+		color:var(--secondary-color);
+		border-radius:10px;
+		border:2px solid var(--secondary-color);		 
+		margin:0;
+		padding:10px;
+		text-decoration:none;
+		min-height:100dvh;
+		display:flex;
+	}	
+	a{
+		background-color:var(--primary-color);
+		color:var(--secondary-color);
+		border-radius:10px;
+		border:2px solid var(--secondary-color);		 
+		margin:5px;
+		padding:10px;
+		text-decoration:none;
+	}
+	a:hover{
+		background-color:var(--secondary-color);
+			color:var(--primary-color);
+		}
+	nav{ 
+		display: flex;
+  		flex-wrap: wrap;
+  		justify-content: center;
+  		gap: 10px;
+	}	
+	nav:hover{
+			background-color:var(--secondary-color);
+			color:var(--primary-color);
+		}
+	 div.cl{
+		background-color: gray;
+		color:var(--primary-color);	
+		}
+		.image {
+            float: none;
+		    display: block;
+    		margin: 0 auto;
+        }	
+      .dark-mode {
+            --primary-color:black;
+			--secondary-color:white;
+        }
+		#icon{
+			width:30px;
+			cursor:pointer;
+		}
+		:root{
+			--primary-color:white;
+			--secondary-color:black;
+		}
+	::-webkit-scrollbar{width:15px;}
+	::-webkit-scrollbar-track{background:orange;}
+	::-webkit-scollbar-thumb{
+		background:linear-gradiant(white,red);
+		border-raduis:10px;
+	}
+	.material-symbols-outlined {
+  		font-variation-settings:
+  			'FILL' 0,
+  			'wght' 400,
+  			'GRAD' 0,
+  			'opsz' 24
+	}
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+	.search{
+		width:max-content;
+		display:flex;
+		align-items:center;
+		padding:14px;
+		border-radius:28px;
+		background:var(--primary-color);
+	}
+	.search-input{
+		font-size:16px;
 		color:var(--secondary-color);
 		margin-left:14px;
 		outline:none;
@@ -145,8 +355,8 @@
 	<div>
 	
 	<h2>About This Page</h2>
-	<p>Welcome to my website. This is my online journal, where I share few pieces of my life and thoughts on my academic, business, career, general life and future projects to the viewers.I generally don't have any subject that is close to me yet but If I get one I will surely add a new section to this page.</p>
-	<p>Disclaimer &#9940;:Please note that the thoughts, ideas and other content published here are purely my personal opinion, so take everything with a 'pinch of salt' & never chill.</p> 
+	<p>Welcome to my website. This is my portfolio website.</p>
+	<p>Disclaimer &#9940;:Please note that the content published here are purely my personal.</p> 
 	<p>If you find my personal page even a little interesting then I hope you will find my other pages interesting too.</p>
 	<p>  
 
@@ -167,8 +377,3 @@
  	</div>
 </body>
 </html> 
-
-
-
-
-

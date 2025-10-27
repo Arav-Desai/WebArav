@@ -5,67 +5,95 @@
 	<style>
 	p,h1,h2{
 		font-family:'comic sans',cursive;
-		
 	}
-	a{
-		background-color:white;
-		color:black;
+	body{
+		background-color:var(--primary-color);
+		color:var(--secondary-color);
 		border-radius:10px;
-		border:2px solid black;		 
+		border:2px solid var(--secondary-color);		 
+		margin:5px;
+		padding:10px;
+		text-decoration:none;
+		font-family:'comic sans',cursive;
+	}	
+	a{
+		background-color:var(--primary-color);
+		color:var(--secondary-color);
+		border-radius:10px;
+		border:2px solid var(--secondary-color);		 
 		margin:5px;
 		padding:10px;
 		text-decoration:none;
 		font-family:'comic sans',cursive;
 	}
 	a:hover{
-		background-color:black;
-			color:white;
+		background-color:var(--secondary-color);
+			color:var(--primary-color);
 		}
 	nav{ 
-		background-color:white;
-		color:black; 
-		border:2px solid black;
+		background-color:var(--primary-color);
+		color:var(--secondary-color); 
+		border:2px solid var(--secondary-color);
 		text-decoration:none;
 	}	
 	nav:hover{
-			background-color:black;
-			color:white;
+			background-color:var(--secondary-color);
+			color:var(--primary-color);
 		}
 	 div.cl{
 		background-color: gray;
-		color:white;	
+		color:var(--primary-color);	
 	}
 	.image {
             float: left;
             margin-right: 10px;
-        } 
+        }	
+      .dark-mode {
+            --primary-color:black;
+			--secondary-color:white;
+        }
+		#icon{
+			width:30px;
+			cursor:pointer;
+		}
+		:root{
+			--primary-color:white;
+			--secondary-color:black;
+		}
 	</style>
+	<script>
+		var icon=document.getElementbyId("icon");
+		icon.onclick=function(){
+			document.body.classList.toggle("dark-mode");
+			if(document.body.classList.contains("dark-mode")){
+				icon.src="./sun.png";
+			} else {
+				icon.src="./moon.png";
+			}
+		}
+	</script>
 </head>
 <body>	
 	<br>
  	<div>
 		<a href="./Who I am.html">Who I am?</a>
 		<vr>
-		<a href="./Early Life.html">Early Life</a>
-		<vr>		 
-		<a href="./Life Currently.html">Life Currently</a>
-		<vr>
-		<a href="">Places I went</a>
-		<vr>
-		<a href="./What I am up to.html" >What I am up to</a>
+		<a href="./What I am up to.html" >Skills & Tech</a>
 		<vr>
 		<a href="">Worldly views</a>
 		<vr>
-		<a href="./Academics.html">Academics</a>
-		<vr>
 		<a href="">Projects</a>
 		<vr>
-		<a href="">Skills</a>	
+		<a href="">Achievements</a>
+		<vr>
+		<a href="">Blogs</a>
+		<vr>
+		<img src="./moon.png" alt="" id="icon">
 	</div>
 	<br>
 	<hr>
 	<h1 style=" text-align:center;"><i>Welcome To My Page &#128150;</i></h1>
-	<div style="background-color:#F6E6BE ;">
+	<div>
 	
 	<h2>About This Page</h2>
 	<p>Welcome to my website. This is my online journal, where I share few pieces of my life and thoughts on my academic, business, career, general life and future projects to the viewers.I generally don't have any subject that is close to me yet but If I get one I will surely add a new section to this page.</p>
@@ -78,7 +106,6 @@
 	<div  class="cl">
 		Copyright &copy;20XX-All Rights Reserved. 
  	</div>
-   
-	
 </body>
 </html> 
+

@@ -1,20 +1,28 @@
-<!DOCtypehtml> 
+<!DOCTYPE html> 
 <html>
 <head> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Arav Desai</title> 
-	<style>
-	p,h1,h2{
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+    <style>
+	@media(max-width:1440px){
+	*{
 		font-family:'comic sans',cursive;
+	}
+	h1,h2{
+		font-size:clamp(1.8rem,calc(7vw+1rem),5rem);
 	}
 	body{
 		background-color:var(--primary-color);
 		color:var(--secondary-color);
 		border-radius:10px;
 		border:2px solid var(--secondary-color);		 
-		margin:5px;
+		margin:0;
 		padding:10px;
 		text-decoration:none;
-		font-family:'comic sans',cursive;
+		/*min-height:100dvh;*/
+		/*display:flex;*/
+		display:block;
 	}	
 	a{
 		background-color:var(--primary-color);
@@ -24,7 +32,6 @@
 		margin:5px;
 		padding:10px;
 		text-decoration:none;
-		font-family:'comic sans',cursive;
 	}
 	a:hover{
 		background-color:var(--secondary-color);
@@ -43,69 +50,361 @@
 	 div.cl{
 		background-color: gray;
 		color:var(--primary-color);	
+		padding:25px;
+		border-radius: 5px;
 	}
 	.image {
             float: left;
             margin-right: 10px;
         }	
-      .dark-mode {
-            --primary-color:black;
+        
+		#icon{
+			width:30px;
+			cursor:pointer;
+			margin-left: auto; 
+        	border: none !important;
+		}
+		:root{
+			--primary-color:white;
+			--secondary-color:rgb(24, 17, 17);
+		}
+        .dark-mode {
+            --primary-color:rgb(24, 17, 17);
 			--secondary-color:white;
         }
+	::-webkit-scrollbar{width:12px;}
+	::-webkit-scrollbar-track{background:white;}
+	::-webkit-scrollbar-thumb{
+		background:linear-gradient(red,black);
+		border-radius:10px;
+	}
+	.material-symbols-outlined {
+  		font-variation-settings:
+  			'FILL' 0,
+  			'wght' 400,
+  			'GRAD' 0,
+  			'opsz' 24
+	}
+	.search{
+		width:max-content;
+		display:flex;
+		align-items:center;
+		padding:14px;
+		border-radius:28px;
+		background:var(--primary-color);
+	}
+	.search-input{
+		font-size:16px;
+		color:solid var(--secondary-color);
+		margin-left:14px;
+		outline:none;
+		border:2.5px solid var(--secondary-color);
+		border-radius:10px;
+		background:transparent;
+		flex:1;
+		opacity:50%;
+	}
+	.search-input::placeholder{ color:var(--secondary-color);}
+	.logo-link {
+		display: flex;
+  		max-width: 2em;
+ 		background: none;
+  	 	border: none !important;
+  	 	padding: 2px;
+		margin:5px;
+	}
+	.logo-link img {
+		display: flex;
+  		max-width: 2em;
+  		width: 2em; 
+  		height: auto;
+	}
+    }
+	@media(max-width:1024px){
+		nav {
+			  display: flex;
+  			  flex-wrap: wrap;
+  			  justify-content: space-between;
+			}
+		*{
+		font-family:'comic sans',cursive;
+		}
+	h1,h2{
+		font-size:clamp(1.8rem,calc(7vw+1rem),5rem);
+	}
+	body{
+		background-color:var(--primary-color);
+		color:var(--secondary-color);
+		border-radius:10px;
+		border:2px solid var(--secondary-color);		 
+		margin:0;
+		padding:10px;
+		text-decoration:none;
+		/*min-height:100dvh;*/
+		/*display:flex;*/
+		display:block;
+	}	
+	a{
+		background-color:var(--primary-color);
+		color:var(--secondary-color);
+		border-radius:10px;
+		border:2px solid var(--secondary-color);		 
+		margin:5px;
+		padding:10px;
+		text-decoration:none;
+	}
+	a:hover{
+		background-color:var(--secondary-color);
+			color:var(--primary-color);
+		}
+	nav:hover{
+			background-color:var(--secondary-color);
+			color:var(--primary-color);
+		}
+	 div.cl{
+		background-color: gray;
+		color:var(--primary-color);	
+		padding:25px;
+		border-radius: 5px;
+		}
+		.image {
+            float: none;
+		    display: block;
+    		margin: 0 auto;
+        }	
 		#icon{
 			width:30px;
 			cursor:pointer;
 		}
 		:root{
 			--primary-color:white;
-			--secondary-color:black;
+			--secondary-color:rgb(24, 17, 17);
 		}
+        .dark-mode {
+            --primary-color:rgb(24, 17, 17);
+			--secondary-color:white;
+        }
+	::-webkit-scrollbar{width:15px;}
+	::-webkit-scrollbar-track{background:white;}
+	::-webkit-scrollbar-thumb{
+		background:linear-gradient(red,black);
+		border-radius:10px;
+	}
+	.material-symbols-outlined {
+  		font-variation-settings:
+  			'FILL' 0,
+  			'wght' 400,
+  			'GRAD' 0,
+  			'opsz' 24
+	}
+	.search{
+		width:max-content;
+		display:flex;
+		align-items:center;
+		padding:14px;
+		border-radius:28px;
+		background:var(--primary-color);
+	}
+	.search-input{
+		font-size:16px;
+		color:var(--secondary-color);
+		margin-left:14px;
+		outline:none;
+		border:2px solid var(--secondary-color);
+		background:transparent;
+		flex:1;
+	}
+	.search-input::placeholder{ color:var(--secondary-color);}
+	.logo-link {
+ 		 background: none;
+  	 	 border: none !important;
+  	 	 padding: 0;
+		 margin:5px;
+	}
+	.logo-link img {
+  		width: 40px; 
+  		height: auto;
+	}
+}
+	@media(max-width:600px){
+		*{
+		font-family:'comic sans',cursive;
+		}
+		h1,h2{
+			font-size:clamp(1.8rem,calc(7vw+1rem),5rem);
+		}
+	body{
+		background-color:var(--primary-color);
+		color:var(--secondary-color);
+		border-radius:10px;
+		border:2px solid var(--secondary-color);		 
+		margin:0;
+		padding:10px;
+		text-decoration:none;
+		/*min-height:100dvh;*/
+		/*display:flex;*/
+		display:block;
+	}	
+	a{
+		background-color:var(--primary-color);
+		color:var(--secondary-color);
+		border-radius:10px;
+		border:2px solid var(--secondary-color);		 
+		margin:5px;
+		padding:10px;
+		text-decoration:none;
+	}
+	a:hover{
+		background-color:var(--secondary-color);
+			color:var(--primary-color);
+		}
+	nav{ 
+		display: flex;
+  		flex-wrap: wrap;
+  		justify-content: center;
+  		gap: 10px;
+	}	
+	nav:hover{
+			background-color:var(--secondary-color);
+			color:var(--primary-color);
+		}
+	 div.cl{
+		background-color: gray;
+		color:var(--primary-color);	
+		padding:25px;
+		border-radius: 5px;
+		}
+		.image {
+            float: none;
+		    display: block;
+    		margin: 0 auto;
+        }	
+		#icon{
+			width:30px;
+			cursor:pointer;
+		}
+		:root{
+			--primary-color:white;
+			--secondary-color:rgb(24, 17, 17);
+		}
+        .dark-mode {
+            --primary-color:rgb(24, 17, 17);
+			--secondary-color:white;
+        }
+	::-webkit-scrollbar{width:15px;}
+	::-webkit-scrollbar-track{background:white;}
+	::-webkit-scrollbar-thumb{
+		background:linear-gradient(red,black);
+		border-radius:10px;
+	}
+	.material-symbols-outlined {
+  		font-variation-settings:
+  			'FILL' 0,
+  			'wght' 400,
+  			'GRAD' 0,
+  			'opsz' 24
+	}
+	.search{
+		width:max-content;
+		display:flex;
+		align-items:center;
+		padding:14px;
+		border-radius:28px;
+		background:var(--primary-color);
+	}
+	.search-input{
+		font-size:16px;
+		color:var(--secondary-color);
+		margin-left:14px;
+		outline:none;
+		border:2px solid var(--secondary-color);
+		background:transparent;
+		flex:1;
+	}
+	.search-input::placeholder{ color:var(--secondary-color);}
+	.logo-link {
+ 		 background: none;
+  	 	 border: none !important;
+  	 	 padding: 0;
+		 margin:5px;
+	}
+	.logo-link img {
+  		width: 40px; 
+  		height: auto;
+	}
+	}
 	</style>
 	<script>
-		var icon=document.getElementbyId("icon");
-		icon.onclick=function(){
-			document.body.classList.toggle("dark-mode");
-			if(document.body.classList.contains("dark-mode")){
-				icon.src="./sun.png";
-			} else {
-				icon.src="./moon.png";
-			}
-		}
+		document.addEventListener('DOMContentLoaded', (event) => {
+            var icon=document.getElementById("icon");
+            if (icon) {
+                icon.onclick=function(){
+                    document.body.classList.toggle("dark-mode");
+                    if(document.body.classList.contains("dark-mode")){
+                        icon.src="./sun.png";
+                    } else {
+                        icon.src="./moon.png";
+                    }
+                }
+            }
+        });
 	</script>
 </head>
 <body>	
 	<br>
+	<div class="search">
+		<span class="search-icon material-symbols-outlined">search</span>
+		<input type="search" class="search-input" placeholder="Search">
+	</div>
+	<br>
  	<div>
 		<a href="./Who I am.html">Who I am?</a>
 		<vr>
-		<a href="./What I am up to.html" >Skills & Tech</a>
+		<a href="./Worldly views.html">Know it!</a>
 		<vr>
-		<a href="">Worldly views</a>
+		<a href="./Projects.html">Projects</a>
 		<vr>
-		<a href="">Projects</a>
+		<a href="./Achievments.html">Achievements</a>
 		<vr>
-		<a href="">Achievements</a>
-		<vr>
-		<a href="">Blogs</a>
+		<a href="./Blogs.html">Blogs</a>
 		<vr>
 		<img src="./moon.png" alt="" id="icon">
 	</div>
 	<br>
 	<hr>
-	<h1 style=" text-align:center;"><i>Welcome To My Page &#128150;</i></h1>
+	<img style="float:right;background-image:url('./blob3.png'),url('./blob2.png'); background-repeat: no-repeat;" 
+			src="./me.png" alt="Arav-Desai">
+	<h1 style=" text-align:center;"><i>Welcome To My Page</i>&#128150;</h1>
+	<h1 style="text-align: justify;"><i>Hi! This is me. Arav Desai</i></h1>
 	<div>
 	
 	<h2>About This Page</h2>
-	<p>Welcome to my website. This is my online journal, where I share few pieces of my life and thoughts on my academic, business, career, general life and future projects to the viewers.I generally don't have any subject that is close to me yet but If I get one I will surely add a new section to this page.</p>
-	<p>Disclaimer &#9940;:Please note that the thoughts, ideas and other content published here are purely my personal opinion, so take everything with a 'pinch of salt' & never chill.</p> 
-	<p>If you find my personal page even a little interesting then I hope you will find my other pages interesting too.</p>
-	<p>  
+	<p>Welcome to my website. This is my portfolio website.</p>
+<p>I’m Arav — a developer, designer, and thinker who builds with clarity, codes with elegance, and learns like it’s a martial art.
+I am a results-driven professional dedicated to transforming complex challenges into strategic successes. 
+My expertise lies in Web Development, DSA, DBMS, Cyber Security. 
+I thrive on delivering value, driven by a commitment to innovation, precision, and collaborative excellence. 
+My goal is to not just meet expectations, but to redefine what's possible within my domain.</p>
+<p>Disclaimer &#9940;:Please note that the content published here are purely my personal.</p> 
+<p>If you find my personal page even a little interesting then I hope you will find my other pages interesting too.</p>
 
 	</div>
 	<hr>
 	<div  class="cl">
-		Copyright &copy;20XX-All Rights Reserved. 
+		Follow me on: 
+		<a href="https://www.youtube.com/@aravdesai7790"> YouTube 
+			<!--<img src="./ytlogo.png" alt="" class="logo-link">-->
+		</a>
+		<a href="https://github.com/Arav-Desai"> GitHub
+			<!--<img src="./ghlogo.png" alt="" class="logo-link">-->
+		</a>
+		<a href="https://www.linkedin.com/in/arav-desai-269098322/"> LinkedIn
+			<!--<img src="./lnlogo.png" alt="" class="logo-link">-->
+		</a>
+		<br>
+		<br>
+		Copyright &copy;20XX-All Rights Reserved.
+		Built with 💙 and curiosity.
  	</div>
 </body>
 </html> 
-

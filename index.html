@@ -5,12 +5,97 @@
 	<title>Arav Desai</title> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
     <style>
+	html{scroll-behavior:smooth;}
+	.learning-journey {
+	    display: grid;
+	    grid-template-columns: repeat(3, 1fr);
+	    gap: 20px; 
+	    justify-items: center;
+	    text-align: center;
+	    width: 100%;
+	}
+	.no-match {display: none !important;}
+	a{text-decoration:none; color:var(--secondary-color); text-color:var(--primary-color);}
+	/*a:hover{text-decoration:none; color:var(--primary-color);}	*/
+	div {
+	    width: 100%; 
+	    max-width: 1200px; 
+	}
+	.navbar {
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    /*background: var(--primary-color);*/
+	    border-bottom: 2px solid var(--secondary-color);
+	    padding: 10px 0;
+	    z-index: 1000; 
+	    display: flex;
+	    justify-content: left;
+	    gap: 15px;
+	    /*background: rgba(255, 255, 255, 0.8);*/
+	    backdrop-filter: blur(5px);
+	}
+.navbar a {
+	margin: 0; 
+	border: none;
+	font-weight: bold;
+        background-color:var(--primary-color);
+	color:var(--secondary-color);
+	border-radius:10px;
+	border:2px solid var(--secondary-color);		 
+	margin:5px;
+	padding:10px;
+	text-decoration:none;
+}
+	section {
+	    padding-top:100px;
+	    padding: 20px 20px 40px 20px;
+	    scroll-margin-top: 80px;
+	    box-sizing:border-box;
+	    width:100%
+	    flex-direction: column;
+	    align-items: center;
+	}
+	nav{ 
+		background-color:var(--primary-color);
+		color:var(--secondary-color); 
+		text-decoration:none;
+	}
+	.navbar a:hover{
+		background-color:var(--secondary-color);
+		color:var(--primary-color);
+	}
+	.journey-step {
+	    background: rgba(255, 255, 255, 0.1);
+	    padding: 15px;
+	    border-radius: 10px;
+	    transition: transform 0.3s;
+	    width: 100%;
+	    box-sizing: border-box;
+            opacity: 0;
+	    transform: translateX(-50px);
+	    transition: all 0.6s ease-out;
+
+	}
+	.journey-step.visible {
+		  opacity: 1;
+		  transform: translateX(0);
+	}
+	.journey-step:hover {
+	    transform: translateY(-5px);
+	    background: var(--primary-color);
+	    color: var(--primary-color);
+	}
 	@media(max-width:1440px){
 	*{
 		font-family:'comic sans',cursive;
 	}
-	h1,h2{
+	h1,h2,h4{
 		font-size:clamp(1.8rem,calc(7vw+1rem),5rem);
+		text-align:center;
+		display: block; 
+		block-direction:row;
 	}
 	body{
 		background-color:var(--primary-color);
@@ -20,38 +105,25 @@
 		margin:0;
 		padding:10px;
 		text-decoration:none;
-		/*min-height:100dvh;*/
+		min-height:100vh;
+		display:flex;
+		flex-direction:column;
 		/*display:flex;*/
-		display:block;
+		transition: background-color 0.3s, color 0.3s;
+		width: 100%; 
+		overflow-x: hidden;
 	}	
-	a{
-		background-color:var(--primary-color);
-		color:var(--secondary-color);
-		border-radius:10px;
-		border:2px solid var(--secondary-color);		 
-		margin:5px;
-		padding:10px;
-		text-decoration:none;
-	}
-	a:hover{
-		background-color:var(--secondary-color);
-			color:var(--primary-color);
-		}
-	nav{ 
-		background-color:var(--primary-color);
-		color:var(--secondary-color); 
-		border:2px solid var(--secondary-color);
-		text-decoration:none;
-	}	
-	nav:hover{
-			background-color:var(--secondary-color);
-			color:var(--primary-color);
-		}
+	/*a{
+		
+	}*/
 	 div.cl{
 		background-color: gray;
 		color:var(--primary-color);	
 		padding:25px;
 		border-radius: 5px;
+	        margin-top:auto;
+		width:100%;
+		font-weight:bold;
 	}
 	.image {
             float: left;
@@ -106,7 +178,7 @@
 	}
 	.search-input::placeholder{ color:var(--secondary-color);}
 	.logo-link {
-		display: flex;
+		display: block;
   		max-width: 2em;
  		background: none;
   	 	border: none !important;
@@ -114,23 +186,28 @@
 		margin:5px;
 	}
 	.logo-link img {
-		display: flex;
+		display: block;
   		max-width: 2em;
   		width: 2em; 
   		height: auto;
 	}
     }
 	@media(max-width:1024px){
-		nav {
-			  display: flex;
-  			  flex-wrap: wrap;
-  			  justify-content: space-between;
-			}
 		*{
 		font-family:'comic sans',cursive;
 		}
+		/*.journey-step {
+		  opacity: 0;
+		  transform: translateX(-50px);
+		  transition: all 0.6s ease-out;
+		}
+		.journey-step.visible {
+		  opacity: 1;
+		  transform: translateX(0);
+		}*/
 	h1,h2{
 		font-size:clamp(1.8rem,calc(7vw+1rem),5rem);
+		text-align:center;
 	}
 	body{
 		background-color:var(--primary-color);
@@ -140,11 +217,15 @@
 		margin:0;
 		padding:10px;
 		text-decoration:none;
-		/*min-height:100dvh;*/
-		/*display:flex;*/
-		display:block;
+		min-height:100vh;
+		display:flex;
+		flex-direction:column;
+		transition: background-color 0.3s, color 0.3s;
+		padding-top:80px;
+		width:100%;
+		overflow-x:hidden;
 	}	
-	a{
+	/*a{
 		background-color:var(--primary-color);
 		color:var(--secondary-color);
 		border-radius:10px;
@@ -152,24 +233,19 @@
 		margin:5px;
 		padding:10px;
 		text-decoration:none;
-	}
-	a:hover{
-		background-color:var(--secondary-color);
-			color:var(--primary-color);
-		}
-	nav:hover{
-			background-color:var(--secondary-color);
-			color:var(--primary-color);
-		}
+	}*/
 	 div.cl{
 		background-color: gray;
 		color:var(--primary-color);	
 		padding:25px;
 		border-radius: 5px;
-		}
-		.image {
-            float: none;
-		    display: block;
+                margin-top:auto;
+		width:100%;
+		font-weight:bold;
+	}
+	.image {
+                float: none;
+		display: block;
     		margin: 0 auto;
         }	
 		#icon{
@@ -180,10 +256,7 @@
 			--primary-color:white;
 			--secondary-color:rgb(24, 17, 17);
 		}
-        .dark-mode {
-            --primary-color:rgb(24, 17, 17);
-			--secondary-color:white;
-        }
+        .dark-mode {--primary-color:rgb(24, 17, 17);--secondary-color:white;}
 	::-webkit-scrollbar{width:15px;}
 	::-webkit-scrollbar-track{background:white;}
 	::-webkit-scrollbar-thumb{
@@ -230,8 +303,25 @@
 		*{
 		font-family:'comic sans',cursive;
 		}
+		section {
+		    padding: 40px 0;
+		    scroll-margin-top: 80px;
+		}
+		/*.journey-step {
+		  opacity: 0;
+		  transform: translateX(-50px);
+		  transition: all 0.6s ease-out;
+		}
+		.journey-step.visible {
+		  opacity: 1;
+		  transform: translateX(0);
+		}*/
+		.learning-journey {grid-template-columns: 1fr;}
 		h1,h2{
 			font-size:clamp(1.8rem,calc(7vw+1rem),5rem);
+			text-align:center;
+			display: block; 
+			block-direction: column;
 		}
 	body{
 		background-color:var(--primary-color);
@@ -241,11 +331,15 @@
 		margin:0;
 		padding:10px;
 		text-decoration:none;
-		/*min-height:100dvh;*/
-		/*display:flex;*/
-		display:block;
+		min-height:100vh;
+		display:flex;
+		flex-direction:column;
+		transition: background-color 0.3s, color 0.3s;
+		padding-top:80px;
+		width:100%;
+		overflow-x:hidden;
 	}	
-	a{
+	/*a{
 		background-color:var(--primary-color);
 		color:var(--secondary-color);
 		border-radius:10px;
@@ -253,57 +347,24 @@
 		margin:5px;
 		padding:10px;
 		text-decoration:none;
-	}
-	a:hover{
-		background-color:var(--secondary-color);
-			color:var(--primary-color);
-		}
-	nav{ 
-		display: flex;
-  		flex-wrap: wrap;
-  		justify-content: center;
-  		gap: 10px;
-	}	
-	nav:hover{
-			background-color:var(--secondary-color);
-			color:var(--primary-color);
-		}
+	}*/
 	 div.cl{
 		background-color: gray;
 		color:var(--primary-color);	
 		padding:25px;
 		border-radius: 5px;
-		}
-		.image {
-            float: none;
-		    display: block;
-    		margin: 0 auto;
-        }	
-		#icon{
-			width:30px;
-			cursor:pointer;
-		}
-		:root{
-			--primary-color:white;
-			--secondary-color:rgb(24, 17, 17);
-		}
-        .dark-mode {
-            --primary-color:rgb(24, 17, 17);
-			--secondary-color:white;
-        }
+		width:100%;
+		font-weight:bold;
+	        margin-top:auto;
+	}
+	.image {float: none;display: block; margin: 0 auto;}	
+	#icon{width:30px;cursor:pointer;}
+	:root{--primary-color:white;--secondary-color:rgb(24, 17, 17);}
+        .dark-mode {--primary-color:rgb(24, 17, 17);--secondary-color:white;}
 	::-webkit-scrollbar{width:15px;}
 	::-webkit-scrollbar-track{background:white;}
-	::-webkit-scrollbar-thumb{
-		background:linear-gradient(black,white);
-		border-radius:10px;
-	}
-	.material-symbols-outlined {
-  		font-variation-settings:
-  			'FILL' 0,
-  			'wght' 400,
-  			'GRAD' 0,
-  			'opsz' 24
-	}
+	::-webkit-scrollbar-thumb{background:linear-gradient(black,white);border-radius:10px;}
+	.material-symbols-outlined {font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}
 	.search{
 		width:max-content;
 		display:flex;
@@ -332,65 +393,284 @@
   		width: 40px; 
   		height: auto;
 	}
-	}
+}
 	</style>
-	<script>
-		document.addEventListener('DOMContentLoaded', (event) => {
-            var icon=document.getElementById("icon");
-            if (icon) {
-                icon.onclick=function(){
-                    document.body.classList.toggle("dark-mode");
-                    if(document.body.classList.contains("dark-mode")){
-                        icon.src="./sun.png";
-                    } else {
-                        icon.src="./moon.png";
-                    }
-                }
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        var icon = document.getElementById("icon");
+        if (icon) { // Safety check
+            icon.onclick = function() {
+                document.body.classList.toggle("dark-mode");
+                icon.src = document.body.classList.contains("dark-mode") ? "./sun.png" : "./moon.png";
             }
-        });
-	</script>
+        }
+
+        const steps = document.querySelectorAll('.journey-step');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 }); 
+        steps.forEach(step => observer.observe(step));
+
+        const box = document.getElementById('jsbox');
+        let pos = 0;
+        function move() {
+            if (!box) return; 
+            pos++;
+            box.style.left = pos + 'px';
+            if (pos < 300) {
+                requestAnimationFrame(move);
+            }
+        }
+        move();
+
+        const searchBox = document.querySelector('.search-input');
+        const items = document.querySelectorAll('.journey-step');
+        if (searchBox) { 
+            searchBox.addEventListener('input', function() {
+                const term = searchBox.value.toLowerCase();
+                items.forEach(function(item) {
+                     const text = item.innerText.toLowerCase();
+                    if (text.includes(term)) {
+                        item.classList.remove('no-match'); 
+                    } else {
+                        item.classList.add('no-match');    
+                    }
+                });
+            });
+        }
+    });
+</script>
 </head>
+
 <body>	
 	<br>
+	<nav class="navbar">
 	<div class="search">
 		<span class="search-icon material-symbols-outlined">search</span>
 		<input type="search" class="search-input" placeholder="Search">
-	</div>
-	<br>
- 	<div>
-		<a href="./Who I am.html">Who I am?</a>
-		<vr>
-		<a href="./Worldly views.html">Know it!</a>
-		<vr>
-		<a href="./Projects.html">Projects</a>
-		<vr>
-		<a href="./Achievments.html">Achievements</a>
-		<vr>
-		<a href="./Blogs.html">Blogs</a>
-		<vr>
 		<img src="./moon.png" alt="" id="icon">
 	</div>
 	<br>
+		<a href="#home">Home</a>
+		<a href="#Capabilities">Capabilities</a>
+		<a href="#Projects">Projects</a>
+	</nav>
+	<br>
 	<hr>
-	<img style="float:right;background-image:url('./blob3.png'),url('./blob2.png'); background-repeat: no-repeat;" 
-			src="./me.png" alt="Arav-Desai">
-	<h1 style=" text-align:center;"><i>Welcome To My Page</i>&#128150;</h1>
-	<h1 style="text-align: justify;"><i>Hi! This is me. Arav Desai</i></h1>
+	<section id="home">
+	<img style="float:right;background-image:url('./blob3.png'),url('./blob2.png'); background-repeat: no-repeat;" src="./me.png" alt="Arav-Desai">
+	<h1 style="text-align:center;"><i>Welcome To My Page</i>&#128150;</h1>
+	<h1 style="text-align:justify;"><i>Hi! This is me. Arav Desai</i></h1>
 	<div>
-	
-	<h2>About This Page</h2>
-	<p>Welcome to my website. This is my portfolio website.</p>
-<p>I’m Arav — a developer, designer, and thinker who builds with clarity, codes with elegance, and learns like it’s a martial art.
-I am a results-driven professional dedicated to transforming complex challenges into strategic successes. 
-My expertise lies in Web Development, DSA, DBMS, Cyber Security. 
-I thrive on delivering value, driven by a commitment to innovation, precision, and collaborative excellence. 
-My goal is to not just meet expectations, but to redefine what's possible within my domain.</p>
-<p>Disclaimer &#9940;:Please note that the content published here are purely my personal.</p> 
-<p>If you find my personal page even a little interesting then I hope you will find my other pages interesting too.</p>
-
+		<h2>About This Page</h2>
+		<p>Welcome to my website. This is my portfolio website.</p>
+		<p>I’m Arav — a developer, designer, and thinker who builds with clarity, codes with elegance, and learns like it’s a martial art.
+		I am a results-driven professional dedicated to transforming complex challenges into strategic successes. 
+		My expertise lies in Web Development, DSA, DBMS, Cyber Security. 
+		I thrive on delivering value, driven by a commitment to innovation, precision, and collaborative excellence. 
+		My goal is to not just meet expectations, but to redefine what's possible within my domain.</p>
+		<p>Disclaimer &#9940;:Please note that the content published here are purely my personal.</p> 
+		<p>If you find my personal page even a little interesting then I hope you will find my other pages interesting too.</p>
 	</div>
+	</section>
 	<hr>
-	<div  class="cl">
+	<section id="Capabilities">
+	<h1>Capabilities</h1>
+	<h4>Systems Thinker | AIML Engineer | Cyber Security Specialist | Entrepreneur | Inventor | Explorer | Continuous Learner | Polymath</h4>	
+		<h2>Learning Journey!</h2>
+		<section class="learning-journey"> 
+  			<div class="journey-step hidden">
+				<a href="Competitive Programming Certificate.pdf">
+				<img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="NPTEL" />
+			        <p>NPTEL: Improved algorithms</p>
+				</a>
+			</div>
+  			<div class="journey-step hidden">
+				<a href="python with machine learning certificate.pdf">
+			    <img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="Python ML" />
+			    <p>Python ML: Advanced skills</p>
+				</a>
+			</div>
+			<div class="journey-step hidden">
+				<a href="ISRO certificate.pdf">
+			    <img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="ISRO" />
+			    <p>ISRO: Satellite Systems</p>
+				</a>
+			</div>	
+			<div class="journey-step hidden">
+				<a href="python spoken tutorial.pdf">
+			    <img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="spt" />
+			    <p>Python Spoken Tutorial conducted by IIT Bombay</p>
+				</a>
+			</div>
+			<div class="journey-step hidden">
+				<a href="Programming, Data Structures and Algorithms using Python Certificate.pdf">
+				<img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="Python ML" />
+			    	<p>Python: Advanced skills</p>
+				</a>
+			</div>
+			<div class="journey-step hidden">
+				<a href="Java Spoken Tutorial.pdf">
+				<img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="Python ML" />
+			    	<p>Java Spoken Tutorial conducted by IIT Bombay</p>
+				</a>
+			</div>
+		</section>
+
+		<section id="Projects">
+		<h1>Skills Snapshot</h1>
+		<section class="learning-journey">
+			<div class="journey-step hidden">
+				<a href="https://github.com/Arav-Desai/Java-Language">
+				<img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="Java"/>
+				<p>Java</p>
+				</a>
+			</div>
+			<div class="journey-step hidden">
+				<a href="https://github.com/Arav-Desai/July24-Machine-Learning-CBIT">
+				<img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="Python"/>
+				<p>Python</p>
+				</a>
+			</div>
+			<div class="journey-step hidden">
+				<a href="https://github.com/Arav-desai/HTML and CSS">
+				<img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="HTML and CSS"/>
+				<p>HTML and CSS</p>
+				</a>
+			</div>
+			<div class="journey-step hidden">
+				<a href="https://github.com/Arav-Desai/C-language">				
+				<img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="C Lang"/>
+				<p>C Language</p>
+				</a>
+			</div>
+			<div class="journey-step hidden">
+				<a href="">
+				<img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="math"/>
+				<p>Under-Graduate Level Math</p>
+				</a>
+			</div>
+			<div class="journey-step hidden">
+				<a href="https://github.com/Arav-Desai/PHP-Language">
+				<img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="php"/>
+				<p>PHP Language</p>
+				</a>
+			</div>
+			<div class="journey-step hidden">
+				<a href="">
+				<img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="electro"/>
+				<p>Digital Electronics</p>
+				</a>
+			</div>
+			<div class="journey-step hidden">
+				<a href="">
+				<img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="math"/>
+				<p>Discrete Mathematics</p>
+				</a>
+			</div>
+			<div class="journey-step hidden">
+				<a href="">
+				<img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="DSA">
+				<p>Data Structure and Algorithms</p>
+				</a>
+			</div>
+			<div class="journey-step hidden">
+				<a href="">
+				<img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="DBMS">
+				<p>Database Management System</p>
+				</a>
+			</div>
+			<div class="journey-step hidden">
+				<a href="">
+				<img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="j2ee"/>
+				<p>Java 2 Enterprise Edition</p>
+				</a>
+			</div>
+			<div class="journey-step hidden">
+				<a href="">
+				<img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="com"/>
+				<p>Computer Architecture</p>
+				</a>
+			</div>
+			<div class="journey-step hidden">
+				<a href="">
+				<img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="toc"/>
+				<p>Theory Of Computation</p>
+				</a>
+			</div>
+			<div class="journey-step hidden">
+				<a href="">
+				<img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="ai"/>
+				<p>Artificial Intelligence</p>
+				</a>
+			</div>
+			<div class="journey-step hidden">
+				<a href="">
+				<img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="data"/>
+				<p>Data Mining</p>
+				</a>
+			</div>
+			<div class="journey-step hidden">
+				<a href="">
+				<img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="os"/>
+				<p>Operating System</p>
+				</a>
+			</div>
+			<div class="journey-step hidden">
+				<a href="">
+				<img src="data_thresholding_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="cs"/>
+				<p>Cyber Security</p>
+				</a>
+			</div>
+		</section>
+
+		<h2>Long Term  Vision</h2>
+		<section class="learning-journey">
+		    <div class="journey-step">
+		        <span class="material-symbols-outlined" style="font-size: 40px;">psychology</span>
+		        <p><strong>Ethical AI Systems</strong><br>Building AI that is not just powerful, but safe and unbiased for society.</p>
+		    </div>
+		    <div class="journey-step">
+		        <span class="material-symbols-outlined" style="font-size: 40px;">shield lock</span>
+		        <p><strong>Cyber Resilience</strong><br>Architecting self-healing security systems for next-gen web infrastructure.</p>
+		    </div>
+		<div class="journey-step">
+	        <span class="material-symbols-outlined" style="font-size: 40px;">rocket launch</span>
+		<p><strong>Tech Entrepreneurship</strong><br>Launching a startup that solves real-world problems using automation.</p>
+		</div>
+		</section>
+		
+		<h2>Personal Touch</h2>
+		<section class="learning-journey">
+		    <div class="journey-step">
+        		<span class="material-symbols-outlined" style="font-size: 40px;">bolt</span>
+		        <p><strong>Tesla Inspired</strong><br>"I don't care that they stole my idea . . I care that they don't have any of their own."</p>
+		    </div>
+		    <div class="journey-step">
+		        <span class="material-symbols-outlined" style="font-size: 40px;">movie filter</span>
+		        <p><strong>Cinematic Art</strong><br>Exploring the world through cinema.</p>
+		    </div>
+		    <div class="journey-step">
+			<span class="material-symbols-outlined" style="fontsize:40px;">shonen</span>
+			<p><strong>Drawing Art</strong><br>Nahh...I don't like anime. It's just to make me look cool.</p>
+		    </div>
+		    <div class="journey-step">
+		        <span class="material-symbols-outlined" style="font-size: 40px;">eco</span>
+		        <p><strong>Sustainable Living</strong><br>Advocate for sustainable, eco-friendly innovation.</p>
+		    </div>
+		    <div class="journey-step">
+		        <span class="material-symbols-outlined" style="font-size: 40px;">leonardo da vinci</span>
+		        <p><strong>Polymath Learning</strong><br>Reading history, philosophy, and physics to fuel my systems thinking.</p>
+		    </div>
+		</section>
+	</section>
+	<hr>
+
+	<div class="cl">
 		Follow me on: 
 		<a href="https://www.youtube.com/@aravdesai7790"> YouTube 
 			<!--<img src="./ytlogo.png" alt="" class="logo-link">-->
@@ -408,3 +688,5 @@ My goal is to not just meet expectations, but to redefine what's possible within
  	</div>
 </body>
 </html> 
+
+
